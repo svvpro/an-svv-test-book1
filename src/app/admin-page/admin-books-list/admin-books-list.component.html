@@ -1,0 +1,21 @@
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books">
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td><a [routerLink]="['/admin', 'books', book.id, 'edit']" class="btn btn-warning">Edit</a></td>
+        <td>
+            <button class="btn btn-danger" (click)="deleteBook(book.id)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
